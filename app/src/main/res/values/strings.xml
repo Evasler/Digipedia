@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">"Digipedia"</string>
+
+    <string name="daily_notification_channel_name">"Featured Digimon"</string>
+
+    <string name="preferences">"digipediaMasterEditionPreferences"</string>
+    <string name="notification_status">"notificationStatus"</string>
+    <string name="daily_digimon">"daily_digimon"</string>
+</resources>

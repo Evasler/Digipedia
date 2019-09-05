@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/app"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <com.evasler.digipediamasteredition.LockedHorizontalScrollView
+        android:id="@+id/backgroundNumbersScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/backgroundNumbersContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:orientation="vertical"/>
+    </com.evasler.digipediamasteredition.LockedHorizontalScrollView>
+
+    <LinearLayout
+        android:id="@+id/resultsWindowContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/adView">
+
+        <FrameLayout
+            android:id="@+id/resultsFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/profileWindowContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/adView">
+
+        <FrameLayout
+            android:id="@+id/profileFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/settingsWindowContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/adView">
+
+            <FrameLayout
+                android:id="@+id/settingsFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/mainWindow"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:background="@drawable/window_background"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_above="@+id/adView"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.7">
+
+            <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/title_back"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_centerInParent="true"
+                android:paddingLeft="50dp"
+                android:paddingRight="50dp"
+                android:text="Digipedia"
+                android:textColor="@android:color/white"
+                android:textSize="30sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.6"
+            android:gravity="center">
+
+            <TableLayout
+                android:id="@+id/filterTable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/top_right_left_borders"
+                    android:paddingLeft="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Attribute: "
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp" />
+
+                    <Spinner
+                        android:id="@+id/attributeSpinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/right_left_borders"
+                    android:paddingLeft="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Level: "
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp" />
+
+                    <Spinner
+                        android:id="@+id/levelSpinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/right_left_borders"
+                    android:paddingLeft="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Family: "
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp" />
+
+                    <Spinner
+                        android:id="@+id/familySpinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bottom_right_left_borders"
+                    android:paddingLeft="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Type: "
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp" />
+
+                    <Spinner
+                        android:id="@+id/typeSpinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null" />
+                </TableRow>
+            </TableLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.7"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/all_borders"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="5dp">
+
+                <EditText
+                    android:id="@+id/searchName"
+                    android:layout_width="160dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/edittext_underline"
+                    android:hint="Digimon Name"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/white"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/searchButton"
+                    android:contentDescription="from_main->to_results"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:onClick="onTransition"
+                    android:text="Search"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.2">
+
+            <TableLayout
+                android:id="@+id/featuredDigimonContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:onClick="onTransition">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/top_right_left_borders"
+                    android:gravity="center"
+                    android:text="Featured Digimon"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
+
+                <RelativeLayout
+                    android:id="@+id/dailyDigimonBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/dailyDigimonImage"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:background="@drawable/left_bottom_borders"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:background="@drawable/right_bottom_borders"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/dailyDigimonName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:minWidth="280dp"
+                                android:textColor="@android:color/white"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/separatingLineDailDescription"
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:background="#7fbcf8" />
+
+                            <ScrollView
+                                android:id="@+id/dailyDigimonDescriptionScroll"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="4dp"
+                                android:paddingRight="4dp">
+
+                                <TextView
+                                    android:id="@+id/dailyDigimonDescription"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="12sp" />
+                            </ScrollView>
+                        </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+
+            </TableLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/notificationCheckBoxContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/settingsButton"
+                android:contentDescription="from_main->to_settings"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Settings"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:onClick="onTransition"/>
+        </RelativeLayout>
+    </LinearLayout>
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary"
+            ads:adSize="SMART_BANNER"
+            ads:adUnitId="@string/ad_unit_id"> <!--Note !! AdView keys are defined in app.gradle for debug and release buildTypes -->
+        </com.google.android.gms.ads.AdView>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
